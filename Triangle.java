@@ -1,6 +1,6 @@
 package Circle;
 
-public class Triangle implements IFigure {
+public class Triangle extends Figure implements IFigure {
 
     /**
      * field a first side of teh triangle
@@ -64,6 +64,8 @@ public class Triangle implements IFigure {
         return (this.a + this.b + this.c);
     }
 
+
+    @Override
     public  double S(){
         double p=P();
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));

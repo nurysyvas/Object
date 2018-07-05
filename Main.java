@@ -2,19 +2,22 @@ package Circle;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.lang.StringBuffer;
 public class Main {
 
     public static void main(String args[]) throws ValueCantbeMinusExseption {
 
+
 //        Scanner reduct = new Scanner(System.in);
 //        String reduction = reduct.nextLine();
 //        System.out.println(reduction);
-//        IFigure rr = figure1(reduction);
+//        IFigure rr = creatureFigure(reduction);
 //        System.out.println(rr.S());
+//
+//        reverstext("description");
 
         ArrayList<IFigure> figures = new ArrayList <IFigure>();
-        IFigure circlee = new Circle(5,5,6);
+        IFigure circlee = new Circle(5,5,100);
         IFigure rectangle = new Rectangle(3, 4);
         IFigure triangle = new Triangle(4,5,5);
         figures.add(circlee);
@@ -22,9 +25,8 @@ public class Main {
         figures.add(rectangle);
 
 
-        Rectangle rrer = new Rectangle(20,100);
-        int rr =rrer.comparison(figures.get(0).S());
-        System.out.println(rr);
+        Rectangle rectanglecom = new Rectangle(1000,100 );
+        System.out.println(rectanglecom.comparison(figures.get(0).S()));
 //        Rectangle rec =new Rectangle(1, 2);
 //        Rectangle rrg =(Rectangle)(figures.get(2));
 //        System.out.println(rrg.comparison(figures.get(1)));
@@ -55,26 +57,32 @@ public class Main {
 //        ar[1].setR(numb);
 
     }
-    public static IFigure figure1 (String reduction) throws ValueCantbeMinusExseption {
-        if (reduction == "cir"){
-            IFigure firure1 = new Circle(1,2,4);
-            return  firure1;
-        }else if(reduction == "rec"){
-            IFigure rectandle1 = new Rectangle(2,4);
-            return  rectandle1;
-        }else if (reduction == "tri"){
-            IFigure triangle1 = new Triangle(3,5,6);
-            return triangle1;
-        } else {
-            System.out.println("u need enter cir rec tri");
-        }
-//        switch (reduction){
-//            case "circ" : IFigure circle1 = new Circle(1,1,3);
-//            return circle1;
-//            case "trian" : IFigure triangle1 = new Triangle(1, 2,4);
+    public static IFigure creatureFigure (String reduction) throws ValueCantbeMinusExseption {
+//        if (reduction == "cir"){
+//            IFigure firure1 = new Circle(1,2,4);
+//            return  firure1;
+//        }else if(reduction == "rec"){
+//            IFigure rectandle1 = new Rectangle(2,4);
+//            return  rectandle1;
+//        }else if (reduction == "tri"){
+//            IFigure triangle1 = new Triangle(3,5,6);
 //            return triangle1;
-//            case "recta" : IFigure rectangle1 = new Rectangle(4, 5);
-//            return rectangle1;
+//        } else {
+//            System.out.println("u need enter cir rec tri");
+//        }
+        switch (reduction){
+            case "circ" : IFigure circle1 = new Circle(1,1,3);
+            return circle1;
+            case "trian" : IFigure triangle1 = new Triangle(1, 2,4);
+            return triangle1;
+            case "recta" : IFigure rectangle1 = new Rectangle(4, 5);
+            return rectangle1;
+        }
         return null;
     }
+    public static void reverstext (String text){
+        StringBuffer textt= new StringBuffer(text);
+        System.out.println(textt.reverse());
+    }
+
 }

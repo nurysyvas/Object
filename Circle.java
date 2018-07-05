@@ -1,11 +1,11 @@
 package Circle;
 
 /**
- * Класс со свойствами <b>x</b> и <b>y</b, <b>R</b>.
- * @author  Павел
+ * class with properties <b>x</b> и <b>y</b, <b>R</b>.
+ * @author  pasha
  * @version 1.0
  **/
-public class Circle implements IFigure {
+public class Circle extends Figure implements IFigure {
 
     /** field х */
     private float x;
@@ -27,6 +27,7 @@ public class Circle implements IFigure {
         setR(R);
     }
 
+    @Override
     /**
      * function count circle square
      * @return  circle square

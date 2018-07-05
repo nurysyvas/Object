@@ -1,6 +1,6 @@
 package Circle;
 
-public class Rectangle extends ComparisonSquare implements IFigure {
+public class Rectangle extends Figure implements IFigure {
 
 
     /** field a
@@ -15,8 +15,6 @@ public class Rectangle extends ComparisonSquare implements IFigure {
     Rectangle(int h, int a) throws ValueCantbeMinusExseption {
         setA(a);
         setH(h);
-        S();
-        setS(S());
     }
 
     /**
@@ -54,6 +52,15 @@ public class Rectangle extends ComparisonSquare implements IFigure {
     }
 
     /**
+     * function count perimeter of the rectangle
+     * @return 2 * a + 2 * h - perimeter
+     */
+    public double P(){
+        return 2 * a + 2 * h;
+    }
+
+    @Override
+    /**
      * function count square of the rectangle
      * @return a*b - square of the rectangle
      */
@@ -61,16 +68,4 @@ public class Rectangle extends ComparisonSquare implements IFigure {
         return a * h;
     }
 
-    /**
-     * function count perimeter of the rectangle
-     * @return s
-     */
-    public double P(){
-        return 2 * a + 2 * h;
-    }
-
-    @Override
-    public void setS(double s) {
-    s = this.S();
-    }
 }
