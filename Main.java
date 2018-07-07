@@ -3,6 +3,8 @@ package Circle;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.StringBuffer;
+import java.util.*;
+
 public class Main {
 
     public static void main(String args[]) throws ValueCantbeMinusExseption {
@@ -15,6 +17,7 @@ public class Main {
 //
 //        reverstext("description");
 
+        dictionary("we are fo fore wolk");
         System.out.println(comportext("121"));
 //        System.out.println(countSymbol("abt t"));
 //        ArrayList<IFigure> figures = new ArrayList <IFigure>();
@@ -92,6 +95,16 @@ public class Main {
             }
         }
         return counter;
+    }
+    public static void dictionary(String text){
+        String[] textsplit = text.split(" ");
+        Map<Integer, String> dictionary = new HashMap<Integer, String>();
+        for (int i = 0; i<textsplit.length; i++){
+            dictionary.put(i, textsplit[i]);
+        }
+        for(Map.Entry<Integer, String> item : dictionary.entrySet()){
+            System.out.printf("key %d Value: %s \n", item.getKey(), item.getValue());
+        }
     }
 
 
