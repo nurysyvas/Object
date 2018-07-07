@@ -9,16 +9,19 @@ public class Main {
 
     public static void main(String args[]) throws ValueCantbeMinusExseption {
 
+
 //        Scanner reduct = new Scanner(System.in);
 //        String reduction = reduct.nextLine();
 //        System.out.println(reduction);
 //        IFigure rr = creatureFigure(reduction);
-//        System.out.println(rr.S());
+//          System.out.println(countSymbol("34ggaerg4"));
+//          int arrrr[]={4,4,5,6,64,42};
+//          sort2(arrrr);
 //
 //        reverstext("description");
 
-        dictionary("we are fo fore wolk");
-        System.out.println(comportext("121"));
+        dictionary("for for for for for dude gier gierg");
+//        System.out.println(comportext("121"));
 //        System.out.println(countSymbol("abt t"));
 //        ArrayList<IFigure> figures = new ArrayList <IFigure>();
 //        IFigure circlee = new Circle(5,5,100);
@@ -78,33 +81,69 @@ public class Main {
         StringBuffer reverText = (textt.reverse());
         return reverText;
     }
-    public static int comportext (String text){
-        StringBuffer textcomp = new StringBuffer(text);
-        if (textcomp.toString().equals(textcomp.reverse().toString())){
-            return 1;
-        }else {
-            return -1;
-        }
-    }
+//    public static boolean comportext (String text){
+//
+//
+//        if (textcomp.toString().equals(textcomp.reverse().toString())){
+//            return true;
+//        }else {
+//            return false;
+//        }
+//    }
 
     public static int countSymbol (String text){
         int counter = 0;
         for(int i=0; i<text.length(); i++) {
-            if(text.charAt(i) != ' ') {
+            if(text.charAt(i) >= 48 && text.charAt(i) <= 58) {
                 counter++;
             }
         }
         return counter;
     }
+    public static void sort1(int[] array){
+        Arrays.sort(array);
+        for( int ar: array){
+            System.out.print(ar + " ");
+        }
+    }
+    public static void sort2(int[] array){
+        for (int i = 0; i < array.length-1; i++){
+            for( int j = 0; j < array.length-1 -i; j++){
+                if(array[j] > array[j+1]){
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+        for( int ar: array){
+            System.out.print(ar + " ");}
+
+    }
+
     public static void dictionary(String text){
+        int count = 1;
         String[] textsplit = text.split(" ");
-        Map<Integer, String> dictionary = new HashMap<Integer, String>();
-        for (int i = 0; i<textsplit.length; i++){
-            dictionary.put(i, textsplit[i]);
+        HashMap<String, Integer> dictionary = new HashMap<String , Integer>();
+        ArrayList<String> list = new ArrayList <String>();
+        for (String item : textsplit) {
+            list.add(item);
         }
-        for(Map.Entry<Integer, String> item : dictionary.entrySet()){
-            System.out.printf("key %d Value: %s \n", item.getKey(), item.getValue());
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {
+                    count++;
+                    list.remove(j);
+                    j--;
+                }
+            }
+            dictionary.put(list.get(i), count);
+            count = 1;
+            }
+        for (Map.Entry<String, Integer> mapE : dictionary.entrySet()) {
+            System.out.println("слово " + mapE.getKey() + " - количество вхождений " + mapE.getValue());
         }
+
     }
 
 
