@@ -20,7 +20,7 @@ public class Main {
 //
 //        reverstext("description");
 
-        dictionary("for for for for for dude gier gierg");
+//        dictionary("for for for for for dude gier gierg");
 //        System.out.println(comportext("121"));
 //        System.out.println(countSymbol("abt t"));
 //        ArrayList<IFigure> figures = new ArrayList <IFigure>();
@@ -81,70 +81,69 @@ public class Main {
         StringBuffer reverText = (textt.reverse());
         return reverText;
     }
-//    public static boolean comportext (String text){
-//
-//
-//        if (textcomp.toString().equals(textcomp.reverse().toString())){
-//            return true;
-//        }else {
-//            return false;
+    public static boolean isPalindrome(String str) {
+        //postcondition: Result := reverse(str) = str
+        int n = str.length();
+        for (int i = 0; i < n/2; ++i) {
+            if (str.charAt(i) != str.charAt(n-i-1)) return false;
+        }
+        return true;
+    }
+
+//    public static int countSymbol (String text){
+//        int counter = 0;
+//        for(int i=0; i<text.length(); i++) {
+//            if(text.charAt(i) >= 48 && text.charAt(i) <= 58) {
+//                counter++;
+//            }
+//        }
+//        return counter;
+//    }
+
+//    public static void sort1(int[] array){
+//        Arrays.sort(array);
+//        for( int ar: array){
+//            System.out.print(ar + " ");
 //        }
 //    }
 
-    public static int countSymbol (String text){
-        int counter = 0;
-        for(int i=0; i<text.length(); i++) {
-            if(text.charAt(i) >= 48 && text.charAt(i) <= 58) {
-                counter++;
-            }
-        }
-        return counter;
-    }
-    public static void sort1(int[] array){
-        Arrays.sort(array);
-        for( int ar: array){
-            System.out.print(ar + " ");
-        }
-    }
-    public static void sort2(int[] array){
-        for (int i = 0; i < array.length-1; i++){
-            for( int j = 0; j < array.length-1 -i; j++){
-                if(array[j] > array[j+1]){
-                    int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
-                }
-            }
-        }
-        for( int ar: array){
-            System.out.print(ar + " ");}
-
-    }
-
-    public static void dictionary(String text){
-        int count = 1;
-        String[] textsplit = text.split(" ");
-        HashMap<String, Integer> dictionary = new HashMap<String , Integer>();
-        ArrayList<String> list = new ArrayList <String>();
-        for (String item : textsplit) {
-            list.add(item);
-        }
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).equals(list.get(j))) {
-                    count++;
-                    list.remove(j);
-                    j--;
-                }
-            }
-            dictionary.put(list.get(i), count);
-            count = 1;
-            }
-        for (Map.Entry<String, Integer> mapE : dictionary.entrySet()) {
-            System.out.println("слово " + mapE.getKey() + " - количество вхождений " + mapE.getValue());
-        }
-
-    }
+//    public static void sort2(int[] array){
+//        for (int i = 0; i < array.length-1; i++){
+//            for( int j = 0; j < array.length-1 -i; j++){
+//                if(array[j] > array[j+1]){
+//                    int temp = array[j];
+//                    array[j] = array[j+1];
+//                    array[j+1] = temp;
+//                }
+//            }
+//        }
+//        for( int ar: array){
+//            System.out.print(ar + " ");}
+//
+//    }
+//
+//    public static void dictionary(String text){
+//        int count = 1;
+//        String[] textsplit = text.split(" ");
+//        HashMap<String, Integer> dictionary = new HashMap<String , Integer>();
+//        ArrayList<String> list = new ArrayList <String>();
+//        for (String item : textsplit) {
+//            list.add(item);
+//        }
+//        for (int i = 0; i < list.size(); i++) {
+//            for (int j = i + 1; j < list.size(); j++) {
+//                if (list.get(i).equals(list.get(j))) {
+//                    count++;
+//                    list.remove(j);
+//                    j--;
+//                }
+//            }
+//            dictionary.put(list.get(i), count);
+//            count = 1;
+//            }
+//        for (Map.Entry<String, Integer> mapE : dictionary.entrySet()) {
+//            System.out.println("слово " + mapE.getKey() + " - количество вхождений " + mapE.getValue());
+//        }
 
 
 }
