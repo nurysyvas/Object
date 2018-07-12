@@ -9,8 +9,10 @@ import java.util.*;
 public class Main {
 
     public static void main(String args[]) throws ValueCantbeMinusExseption {
-        dictionary("for for for for for dude gier gierg");
-//        arrayv2(5);
+        dictionary("for dude gier gierg");
+        String[] atp = {"gar", "rge", "gerg"};
+        gener(atp);
+
 //        Scanner reduct = new Scanner(System.in);
 //        String reduction = reduct.nextLine();
 //        System.out.println(reduction);
@@ -155,24 +157,49 @@ public class Main {
         int i, j;
 
         String[] textsplit = text.split(" ");
-        Arrays.sort(textsplit);
-        HashMap<String, Integer> dictionary = new HashMap<String , Integer>();
-        for (i = 0; i < textsplit.length; ) {
-            for (j = i + 1; j < textsplit.length; j++) {
-                if (textsplit[i].equals(textsplit[j])) {
-                    count++;
+//        Arrays.sort(textsplit);
+//        HashMap<String, Integer> dictionary = new HashMap<String, Integer>();
+//        if(textsplit[0].equals(textsplit[1])){
+//            count++;
+//        }else {
+//            dictionary.put(textsplit[1], 1);
+//        }
+//        for (i = 0; i < textsplit.length-1; ) {
+//                if (textsplit[i].equals(textsplit[i+1])) {
+//                    for (j=i;j<textsplit.length-1;j++){
+//                        if (textsplit[j].equals(textsplit[j+1])){
+//                            count++;
+//                        }
+//                    }
+//                    i=j;
+//                    dictionary.put(textsplit[i+1], count);
+//                } else {
+//                    dictionary.put(textsplit[i+1], 1);
+//                    count = 1;
+//                }
+//            }
+        HashMap<String, Integer> dictionary = new HashMap<String, Integer>();
+        for(i = 0; i < textsplit.length; i++){
+            for (Map.Entry<String, Integer> mapE : dictionary.entrySet()) {
+                if(String.valueOf(mapE.getValue()).equals(textsplit[i])){
+                    int d = Integer.valueOf(mapE.getKey());
+                    dictionary.remove(mapE.getKey());
+                    dictionary.put(textsplit[i], d+1);
+                    System.out.println("word " + mapE.getKey() + " - number of occurrences " + mapE.getValue());
+                }else {
+                    dictionary.put(textsplit[i], 1);
+                    System.out.println("word " + mapE.getKey() + " - number of occurrences " + mapE.getValue());
                 }
             }
-            dictionary.put(textsplit[i], count);
-            i=count;
-            count = 1;
-            }
-        for (Map.Entry<String, Integer> mapE : dictionary.entrySet()) {
-            System.out.println("word " + mapE.getKey() + " - number of occurrences " + mapE.getValue());
         }
     }
 
-
+    public static  <T> void gener(T[] array ){
+            Arrays.sort(array);
+            for(T item: array){
+                System.out.println(item);
+            }
+    }
 }
 
 
